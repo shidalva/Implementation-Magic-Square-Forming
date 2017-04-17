@@ -1,6 +1,0 @@
-c:\users\sandra\documents\visual studio 2015\Projects\Implementation Magic Square Forming\Implementation Magic Square Forming\bin\Debug\Implementation Magic Square Forming.exe.config
-c:\users\sandra\documents\visual studio 2015\Projects\Implementation Magic Square Forming\Implementation Magic Square Forming\bin\Debug\Implementation Magic Square Forming.exe
-c:\users\sandra\documents\visual studio 2015\Projects\Implementation Magic Square Forming\Implementation Magic Square Forming\bin\Debug\Implementation Magic Square Forming.pdb
-c:\users\sandra\documents\visual studio 2015\Projects\Implementation Magic Square Forming\Implementation Magic Square Forming\obj\Debug\Implementation Magic Square Forming.csprojResolveAssemblyReference.cache
-c:\users\sandra\documents\visual studio 2015\Projects\Implementation Magic Square Forming\Implementation Magic Square Forming\obj\Debug\Implementation Magic Square Forming.exe
-c:\users\sandra\documents\visual studio 2015\Projects\Implementation Magic Square Forming\Implementation Magic Square Forming\obj\Debug\Implementation Magic Square Forming.pdb

@@ -6,7 +6,7 @@ class Solution {
     static int MATRIX_DIMENSION = 3;
     static int MIN = 1;//lower bound of the values of the magic square
     static int MAX = 9;//upper bound of the values of the magic square
-    static int COMBINATIONS_AMOUNT = 288; //constrained combinations amount in a 3*3 matrix
+    static int COMBINATIONS_AMOUNT = 8; //constrained combinations amount in a 3*3 matrix
     static int NULL_COST = 0;
 
     //---------------------------------------------------------------------------------------------------------
@@ -18,8 +18,10 @@ class Solution {
         List<List<List<int>>> permutations = new List<List<List<int>>>();
         permutations.AddRange(listMatrixPermutations());
         Console.WriteLine("The cost is: " + CalculateCost(matrix, permutations));
-
+       
+        Console.WriteLine("----------------------------------------------------------------");
         Console.WriteLine("THE MATRIX PERMUTATIONS ARE THE FOLLOWING: ");
+        Console.WriteLine("----------------------------------------------------------------");
         for (int i = 0; i < permutations.Count; i++) {
             for (int j = 0; j < permutations[i].Count; j++) {
                 for (int k = 0; k < permutations[i][j].Count; k++)
@@ -147,14 +149,26 @@ class Solution {
                 combination_matrix.Add(sub_comb);
                 index_comb++;
             }
+
+            int[][] matrix_transpose = new int[MATRIX_DIMENSION][];
+            for (int i = 0; i < MATRIX_DIMENSION; i++) {
+                matrix_transpose[i] = new int[MATRIX_DIMENSION];
+                for (int j = 0; j < MATRIX_DIMENSION; j++)
+                    matrix_transpose[i][j] = combination_matrix[j][i];
+            }
+
             bool IsCMagic = true;
             for (int i = 0; i < MATRIX_DIMENSION; i++) {
-                int sum = 0;
-                for (int j = 0; j < MATRIX_DIMENSION; j++)
-                    sum += combination_matrix[i][j];
-                if (sum != c_magic)
+                int sumcols = 0;
+                int sumrows = 0;
+                for (int j = 0; j < MATRIX_DIMENSION; j++) {
+                    sumcols += combination_matrix[i][j];
+                    sumrows += matrix_transpose[i][j];
+                }
+                if (sumcols != c_magic || sumrows!=c_magic)
                     IsCMagic = false;
             }
+
             if (IsCMagic && IsMiddleOk(combination_matrix) && 
                 !constrained_combination.Exists(x=>IsTheSameMatrix(x, combination_matrix)))
                 constrained_combination.Add(combination_matrix);
